@@ -1,0 +1,10 @@
+.cc-nav{
+  height: 3.5rem;
+  margin-bottom: 0;
+}
+
+.cc-body{
+  height: calc( 100% - 3.5rem );
+  overflow: auto;
+  padding-top: 1rem
+}

@@ -1,0 +1,26 @@
+<div>
+  <div *ngFor="let section of sections" class="cc-section">
+    <h2 class="cc-h">{{section.subheader}}</h2>
+    <div class="cc-section-panel cc-panel cc-panel-body cc-panel-border">
+      <div class="cc-indent-lg">
+        <ul class="cc-list row cc-flex-list">
+          <ng-container *ngFor="let topic of section.topics">
+            <li *ngIf="topic.name" class="col-md-3 col-sm-12">
+              <ng-container [ngSwitch]="true">
+                <ng-container *ngSwitchCase="!!topic.items">
+                  <a [routerLink]="['/topic', topic.id]">
+                    {{topic.name}}
+                  </a>
+                </ng-container>
+                <ng-container *ngSwitchDefault>
+                  {{topic.name}}
+                </ng-container>
+              </ng-container>
+            </li>
+          </ng-container>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
